@@ -1,0 +1,3 @@
+TODO.txt 
+
+I was thinking we could use this file to divide up work, plan tasks that need to be done, and keep track of overall progress.  
