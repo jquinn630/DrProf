@@ -9,7 +9,7 @@ public class MovePlayer : MonoBehaviour {
 
 	//movement stuffs
 	float moveMagConst;
-	Vector3 moveDirection;
+	public Vector3 moveDirection;
 	float rotDeg;
 
 	// Use this for initialization
@@ -56,13 +56,11 @@ public class MovePlayer : MonoBehaviour {
 			moveDirection = Quaternion.Euler(0, -rotDeg * Time.deltaTime, 0) * moveDirection; 
 			transform.RotateAround(transform.position, Vector3.up, -rotDeg*Time.deltaTime);
 			moveDirection.Normalize();
-			animControl.Play("Run");
 		}
 		if (right  && currentBaseState.nameHash != jumpState) {
 			moveDirection = Quaternion.Euler (0, rotDeg * Time.deltaTime, 0) * moveDirection; 
 			transform.RotateAround (transform.position, Vector3.up, rotDeg * Time.deltaTime);
 			moveDirection.Normalize();
-			animControl.Play("Run");
 		}
 		if(currentBaseState.nameHash == jumpState) {
 			jumptimer++;
