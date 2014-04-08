@@ -14,13 +14,13 @@ public class MovePlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		moveMagConst= 7.5f;
+		moveMagConst= 12f;
 		moveDirection = new Vector3 (0f, 0f, 1f);
 		rotDeg = 120f;
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		GameObject nicky = GameObject.Find ("NickyRage");
 
 		bool up = Input.GetKey (KeyCode.W);
