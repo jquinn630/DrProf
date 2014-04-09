@@ -1,15 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../School/VG Design/Assignment4/Assets/Scripts/RobotMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MovePlayer.cs">
     <Files>
-      <File FileName="../../School/VG Design/Assignment4/Assets/Scripts/RobotMovement.cs" Line="98" Column="1" />
-      <File FileName="../../School/VG Design/Assignment2/Assets/Scripts/PlayerMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/MovePlayer.cs" Line="24" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
-            <Node name="MovePlayer.cs" selected="True" />
+            <Node name="Scripts" expanded="True">
+              <Node name="MovePlayer.cs" selected="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
