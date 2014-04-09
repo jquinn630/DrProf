@@ -5,7 +5,9 @@ public class MovePlayer : MonoBehaviour {
 
 	public Animator animControl;
 	static int jumpState = Animator.StringToHash("Base.Jump"); 
+	public int NumKeys;
 	int jumptimer = 0;
+	public GUIText keyText;
 
 	//movement stuffs
 	float moveMagConst;
@@ -17,6 +19,12 @@ public class MovePlayer : MonoBehaviour {
 		moveMagConst= 12f;
 		moveDirection = new Vector3 (0f, 0f, 1f);
 		rotDeg = 120f;
+		NumKeys = 0;
+	}
+	
+	void Update()
+	{
+		keyText.text = "Keys: " + NumKeys;
 	}
 	
 	// Update is called once per frame
