@@ -12,14 +12,18 @@ public class DoorOpenUnlocked : MonoBehaviour {
 	void Update () {
 	
 	}
-	
+
+	void doorOpen() {
+		foreach (AnimationState clip in animation)
+		{
+			animation.Play(clip.name);
+		}
+	}
+
 	void OnCollisionEnter (Collision other)
 	{
 		if (other.gameObject.name == "NickyRage") {
-			foreach (AnimationState clip in animation)
-			{
-				animation.Play(clip.name);
-			}
+			doorOpen ();
 		}
 	}
 }
