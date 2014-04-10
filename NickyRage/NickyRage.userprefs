@@ -1,21 +1,17 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Room3PuzzleWin.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PressSwitch.cs">
     <Files>
-      <File FileName="Assets/Scripts/MovePlayer.cs" Line="27" Column="37" />
-      <File FileName="Assets/Scripts/DoorOpenUnlocked.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CamRotate.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/DoorOpenLocked.cs" Line="31" Column="6" />
-      <File FileName="Assets/Scripts/TileActive.cs" Line="24" Column="4" />
-      <File FileName="Assets/Scripts/PickUpKey.cs" Line="22" Column="4" />
-      <File FileName="Assets/Scripts/Room3PuzzleWin.cs" Line="7" Column="27" />
+      <File FileName="Assets/Scripts/DoorOpenUnlocked.cs" Line="26" Column="16" />
+      <File FileName="Assets/Scripts/DoorOpenLocked.cs" Line="46" Column="2" />
+      <File FileName="Assets/Scripts/PressSwitch.cs" Line="26" Column="12" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Assembly-CSharp" expanded="True">
             <Node name="Scripts" expanded="True">
-              <Node name="Room3PuzzleWin.cs" selected="True" />
+              <Node name="PressSwitch.cs" selected="True" />
             </Node>
           </Node>
         </State>
