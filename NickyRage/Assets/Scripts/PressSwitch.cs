@@ -19,9 +19,9 @@ public class PressSwitch : MonoBehaviour {
 	void OnCollisionEnter (Collision other) {
 		if(!ispressed) {
 			if (other.gameObject.name == "NickyRage") {
-				foreach (AnimationState clip in animation){
-					animation.Play(clip.name);
-				}
+				animation["Switch1Down"].speed = 2.0f;
+				animation.Play("Switch1Down");
+
 				ispressed = true;
 				foreach (AnimationState clip in mydoor.animation)
 				{

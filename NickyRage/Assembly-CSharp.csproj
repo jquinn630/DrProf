@@ -56,7 +56,12 @@
      <Compile Include="Assets\Scripts\PressSwitch.cs" />
      <Compile Include="Assets\Scripts\Room3PuzzleWin.cs" />
      <Compile Include="Assets\Scripts\TileActive.cs" />
+     <Compile Include="Assets\Sources\LightningBolt.cs" />
      <None Include="Assets\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{088EDCC6-D519-DBDE-F2CE-9FB96CFC6B8E}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
