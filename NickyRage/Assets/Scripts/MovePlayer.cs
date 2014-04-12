@@ -14,6 +14,9 @@ public class MovePlayer : MonoBehaviour {
 	public Vector3 moveDirection;
 	float rotDeg;
 
+	// powerup
+	public bool hasLightning = false;
+
 	// Use this for initialization
 	void Start () {
 		moveMagConst= 12f;
@@ -36,6 +39,7 @@ public class MovePlayer : MonoBehaviour {
 		bool left = Input.GetKey (KeyCode.A);
 		bool right = Input.GetKey (KeyCode.D);
 		bool space = Input.GetKey (KeyCode.Space);
+		bool leftmouse = Input.GetMouseButtonDown (0); // left click
 
 		AnimatorStateInfo currentBaseState = animControl.GetCurrentAnimatorStateInfo(0);
 		float moveMagnitude = moveMagConst * Time.deltaTime;
@@ -52,12 +56,13 @@ public class MovePlayer : MonoBehaviour {
 			transform.position += new Vector3(moveDirection.x * moveMagnitude, 0f, moveDirection.z * moveMagnitude);
 			animControl.Play("WalkingBackward");
 		}
-		else if (space && currentBaseState.nameHash != jumpState){
-			animControl.Play("Jump");
-			jumptimer = 0;
-		}
 		else if (currentBaseState.nameHash != jumpState){
 			animControl.Play("Idle");
+		}
+
+		if (space && currentBaseState.nameHash != jumpState){
+			animControl.Play("Jump");
+			jumptimer = 0;
 		}
 		
 		if (left  && currentBaseState.nameHash != jumpState) {
@@ -77,7 +82,9 @@ public class MovePlayer : MonoBehaviour {
 			}
 		} // times the jump with the animation
 
-
+		if (leftmouse && hasLightning) {
+						Debug.Log ("PEW PEW LIGHTNINGS");
+		}
 //		Debug.Log(animControl.GetCurrentAnimatorStateInfo(0));
 //		Debug.Log (nicky.rigidbody.velocity);
 	}

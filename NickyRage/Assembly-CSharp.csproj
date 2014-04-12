@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\FollowScript.cs" />
      <Compile Include="Assets\Scripts\MovePlayer.cs" />
      <Compile Include="Assets\Scripts\PickUpKey.cs" />
+     <Compile Include="Assets\Scripts\PickUpLightning.cs" />
      <Compile Include="Assets\Scripts\PressSwitch.cs" />
      <Compile Include="Assets\Scripts\Room3PuzzleWin.cs" />
      <Compile Include="Assets\Scripts\TileActive.cs" />

@@ -1,3 +1,22 @@
 TODO.txt 
 
-I was thinking we could use this file to divide up work, plan tasks that need to be done, and keep track of overall progress.  
+Greek Dungeon
+- Add statues/columns/decorations
+- replace capsule with lightning obj
+- lightning gate (need to power to get out)
+	- Or targets across a gap
+- SHOOT DA LIGHTNINGS!!!
+- "flow" of the dungeon
+	- It would be cool to have a second level that involved jumping across all the columns in the main room
+		- maybe the lightning can be used to turn on an elevator?
+
+Playability
+- Better overlay (HUD, powerups, minimap?, etc)
+- add pointer for where player is looking (for aiming stuffs)
+- Something doesn't feel right about the movement controls, but I can't put my finger on it...
+
+General
+- Ice sliding puzzle
+- Steps/platforming puzzles
+- Running?
+- Fix jumping (gravity)
