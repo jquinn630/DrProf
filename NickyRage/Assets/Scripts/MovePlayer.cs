@@ -13,6 +13,7 @@ public class MovePlayer : MonoBehaviour {
 	float moveMagConst;
 	public Vector3 moveDirection;
 	float rotDeg;
+	public float runMultiplier;
 
 	// powerup
 	public bool hasLightning = false;
@@ -23,6 +24,8 @@ public class MovePlayer : MonoBehaviour {
 		moveDirection = new Vector3 (0f, 0f, 1f);
 		rotDeg = 120f;
 		NumKeys = 0;
+
+		animControl.animation["RunningForward"]. = WrapMode.Loop;
 	}
 	
 	void Update()
@@ -40,13 +43,20 @@ public class MovePlayer : MonoBehaviour {
 		bool right = Input.GetKey (KeyCode.D);
 		bool space = Input.GetKey (KeyCode.Space);
 		bool leftmouse = Input.GetMouseButtonDown (0); // left click
+		bool shift = Input.GetKey (KeyCode.LeftShift);
 
 		AnimatorStateInfo currentBaseState = animControl.GetCurrentAnimatorStateInfo(0);
 		float moveMagnitude = moveMagConst * Time.deltaTime;
 
 		if (up && currentBaseState.nameHash != jumpState) {
-			transform.position -= new Vector3(moveDirection.x * moveMagnitude, 0f, moveDirection.z * moveMagnitude);
-			animControl.Play("WalkingForward");
+			if(shift) {
+				transform.position -= new Vector3(moveDirection.x * moveMagnitude * runMultiplier, 0f, moveDirection.z * moveMagnitude * runMultiplier);
+				animControl.Play("RunningForward");
+			}
+			else {
+				transform.position -= new Vector3(moveDirection.x * moveMagnitude, 0f, moveDirection.z * moveMagnitude);
+				animControl.Play("WalkingForward");
+			}
 		}
 		else if (up && currentBaseState.nameHash == jumpState)
 		{
