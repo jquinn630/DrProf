@@ -25,7 +25,7 @@ public class MovePlayer : MonoBehaviour {
 		rotDeg = 120f;
 		NumKeys = 0;
 
-		animControl.animation["RunningForward"]. = WrapMode.Loop;
+		animControl.animation["RunningForward"].wrapMode = WrapMode.Loop;
 	}
 	
 	void Update()

@@ -21,6 +21,7 @@ public class TileActive : MonoBehaviour {
 		{
 			isTileOn = 1;
 			other.gameObject.transform.position = new Vector3(transform.position.x, transform.position.y+5, transform.position.z);
+			other.rigidbody.velocity = new Vector3(0,0,0);
 		}
 	}
 	
