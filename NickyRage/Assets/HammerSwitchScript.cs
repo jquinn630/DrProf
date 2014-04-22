@@ -17,15 +17,20 @@ public class HammerSwitchScript : MonoBehaviour {
 		
 	}
 	
-	void OnTriggerEnter(Collision other) {
-	
-		if (other.gameObject.name == weapon.name)
+	void OnTriggerEnter(Collider other) {
+		Debug.Log(other.gameObject.name);
+		if (other.gameObject.name == weapon.name  && !isActive)
 		{
 			isActive = true;
 			foreach (AnimationState clip in targetObj.animation)
 			{
 				targetObj.animation.Play(clip.name);
 			}
+			foreach (AnimationState clip in animation)
+			{
+				animation.Play(clip.name);
+			}
+			
 			gameObject.renderer.material.color = Color.red;
 		}
 	}
