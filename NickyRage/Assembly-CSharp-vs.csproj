@@ -46,11 +46,12 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CubeLockScript.cs" />
      <Compile Include="Assets\Scripts\CamRotate.cs" />
+     <Compile Include="Assets\Scripts\CubeLockScript.cs" />
      <Compile Include="Assets\Scripts\DoorOpenLocked.cs" />
      <Compile Include="Assets\Scripts\DoorOpenUnlocked.cs" />
      <Compile Include="Assets\Scripts\FollowScript.cs" />
+     <Compile Include="Assets\Scripts\HammerScript.cs" />
      <Compile Include="Assets\Scripts\MovePlayer.cs" />
      <Compile Include="Assets\Scripts\PickUpKey.cs" />
      <Compile Include="Assets\Scripts\PickUpLightning.cs" />
@@ -58,6 +59,7 @@
      <Compile Include="Assets\Scripts\Room3PuzzleWin.cs" />
      <Compile Include="Assets\Scripts\TileActive.cs" />
      <Compile Include="Assets\Sources\LightningBolt.cs" />
+     <Compile Include="Assets\UserHammer.cs" />
      <None Include="Assets\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
   </ItemGroup>
   <ItemGroup>

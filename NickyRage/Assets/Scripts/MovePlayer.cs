@@ -8,6 +8,7 @@ public class MovePlayer : MonoBehaviour {
 	public int NumKeys;
 	int jumptimer = 0;
 	public GUIText keyText;
+	public GameObject hammerObject;
 
 	//movement stuffs
 	float moveMagConst;
@@ -17,6 +18,7 @@ public class MovePlayer : MonoBehaviour {
 
 	// powerup
 	public bool hasLightning = false;
+	public bool hasHammer = false;
 
 	// Use this for initialization
 	void Start () {
@@ -42,6 +44,7 @@ public class MovePlayer : MonoBehaviour {
 		bool left = Input.GetKey (KeyCode.A);
 		bool right = Input.GetKey (KeyCode.D);
 		bool space = Input.GetKey (KeyCode.Space);
+		bool hammer = Input.GetKey (KeyCode.E);
 		bool leftmouse = Input.GetMouseButtonDown (0); // left click
 		bool shift = Input.GetKey (KeyCode.LeftShift);
 
@@ -91,7 +94,13 @@ public class MovePlayer : MonoBehaviour {
 				nicky.rigidbody.AddForce(new Vector3(0.0f, 15.0f, 0.0f), ForceMode.Impulse);
 			}
 		} // times the jump with the animation
-
+		if (hammer) {
+			foreach (AnimationState clip in hammerObject.animation)
+			{
+				hammerObject.animation.Play(clip.name);
+			}
+		}
+		
 		if (leftmouse && hasLightning) {
 						Debug.Log ("PEW PEW LIGHTNINGS");
 		}
