@@ -15,10 +15,10 @@ public class Room3PuzzleWin : MonoBehaviour {
 	void Update () {
 		if (isSolved == 0) {
 		
-			int one = GameObject.Find("Tile6").GetComponent<TileActive>().isTileOn;
-			int two = GameObject.Find("Tile7").GetComponent<TileActive>().isTileOn;
-			int three = GameObject.Find("Tile8").GetComponent<TileActive>().isTileOn;
-			int four = GameObject.Find("Tile9").GetComponent<TileActive>().isTileOn;
+			int one = GameObject.Find("Room1BlockPuzzle/Tile6").GetComponent<TileActive>().isTileOn;
+			int two = GameObject.Find("Room1BlockPuzzle/Tile7").GetComponent<TileActive>().isTileOn;
+			int three = GameObject.Find("Room1BlockPuzzle/Tile8").GetComponent<TileActive>().isTileOn;
+			int four = GameObject.Find("Room1BlockPuzzle/Tile9").GetComponent<TileActive>().isTileOn;
 			
 			if (one==1 && two==1 && three ==1 && four ==1)
 			{

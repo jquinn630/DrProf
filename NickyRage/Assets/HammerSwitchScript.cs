@@ -18,8 +18,8 @@ public class HammerSwitchScript : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other) {
-		Debug.Log(other.gameObject.name);
-		if (other.gameObject.name == weapon.name  && !isActive)
+		bool hammerTime = GameObject.Find("NickyRage").GetComponent<MovePlayer>().hammerTime;
+		if (other.gameObject.name == weapon.name  && !isActive && hammerTime)
 		{
 			isActive = true;
 			foreach (AnimationState clip in targetObj.animation)

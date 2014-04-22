@@ -46,8 +46,10 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BarrierLockedDoor.cs" />
      <Compile Include="Assets\HammerSwitchScript.cs" />
      <Compile Include="Assets\Room1PuzzleWin.cs" />
+     <Compile Include="Assets\Room4PuzzleScript.cs" />
      <Compile Include="Assets\Scripts\CamRotate.cs" />
      <Compile Include="Assets\Scripts\CubeLockScript.cs" />
      <Compile Include="Assets\Scripts\DoorOpenLocked.cs" />

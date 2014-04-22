@@ -26,6 +26,11 @@ public class Room1PuzzleWin : MonoBehaviour {
 			{
 				Door.animation.Play(clip.name);
 			}
+			GameObject.Find("Tile6").renderer.material.color=Color.green;
+			GameObject.Find("Tile7").renderer.material.color=Color.green;
+			GameObject.Find("Tile8").renderer.material.color=Color.green;
+			GameObject.Find("Tile9").renderer.material.color=Color.green;
+			
 		}
 		
 	}

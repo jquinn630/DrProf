@@ -13,6 +13,7 @@ public class CubeLockScript : MonoBehaviour {
 		
 	}
 	
+	
 	void OnCollisionEnter(Collision other){
 		rigidbody.constraints = rigidbody.constraints | RigidbodyConstraints.FreezePositionY;
 		if (other.gameObject.name != "NickyRage")
