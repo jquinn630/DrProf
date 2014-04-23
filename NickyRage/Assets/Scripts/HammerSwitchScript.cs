@@ -39,8 +39,11 @@ public class HammerSwitchScript : MonoBehaviour {
 	
 	public void ResetPosition()
 	{
-		isActive=false;
-		gameObject.renderer.material.color = currentColor;
-		gameObject.transform.localPosition = new Vector3(0, 0, 0);
+		if (isActive)
+		{
+			isActive=false;
+			gameObject.renderer.material.color = currentColor;
+			gameObject.transform.localPosition = new Vector3(0, 0, 0);
+		}
 	}
 }

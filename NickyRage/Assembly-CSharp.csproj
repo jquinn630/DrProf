@@ -46,7 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FallScript.cs" />
      <Compile Include="Assets\HammerSwitchPuzzle.cs" />
+     <Compile Include="Assets\PlatformScript.cs" />
      <Compile Include="Assets\Scripts\BarrierLockedDoor.cs" />
      <Compile Include="Assets\Scripts\CamRotate.cs" />
      <Compile Include="Assets\Scripts\CubeLockScript.cs" />
@@ -66,6 +68,7 @@
      <Compile Include="Assets\Scripts\TileActive.cs" />
      <Compile Include="Assets\Scripts\UserHammer.cs" />
      <Compile Include="Assets\Sources\LightningBolt.cs" />
+     <Compile Include="Assets\WinScript.cs" />
      <None Include="Assets\Raw Mocap Data\Animations\_CompleteAnimationList.txt" />
   </ItemGroup>
   <ItemGroup>

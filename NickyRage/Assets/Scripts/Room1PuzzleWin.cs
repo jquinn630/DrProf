@@ -14,10 +14,10 @@ public class Room1PuzzleWin : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		int one = GameObject.Find("Tile6").GetComponent<TileActive>().isTileOn;
-		int two = GameObject.Find("Tile7").GetComponent<TileActive>().isTileOn;
-		int three = GameObject.Find("Tile8").GetComponent<TileActive>().isTileOn;
-		int four = GameObject.Find("Tile9").GetComponent<TileActive>().isTileOn;
+		int one = GameObject.Find("Room1BlockPuzzle/Tile6").GetComponent<TileActive>().isTileOn;
+		int two = GameObject.Find("Room1BlockPuzzle/Tile7").GetComponent<TileActive>().isTileOn;
+		int three = GameObject.Find("Room1BlockPuzzle/Tile8").GetComponent<TileActive>().isTileOn;
+		int four = GameObject.Find("Room1BlockPuzzle/Tile9").GetComponent<TileActive>().isTileOn;
 		
 		if (one==1 && two==1 && three ==1 && four ==1 && !isSolved)
 		{
@@ -26,10 +26,10 @@ public class Room1PuzzleWin : MonoBehaviour {
 			{
 				Door.animation.Play(clip.name);
 			}
-			GameObject.Find("Tile6").renderer.material.color=Color.green;
-			GameObject.Find("Tile7").renderer.material.color=Color.green;
-			GameObject.Find("Tile8").renderer.material.color=Color.green;
-			GameObject.Find("Tile9").renderer.material.color=Color.green;
+			GameObject.Find("Room1BlockPuzzle/Tile6").renderer.material.color=Color.green;
+			GameObject.Find("Room1BlockPuzzle/Tile7").renderer.material.color=Color.green;
+			GameObject.Find("Room1BlockPuzzle/Tile8").renderer.material.color=Color.green;
+			GameObject.Find("Room1BlockPuzzle/Tile9").renderer.material.color=Color.green;
 			
 		}
 		
