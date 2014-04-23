@@ -10,14 +10,23 @@ Greek Dungeon
 	- It would be cool to have a second level that involved jumping across all the columns in the main room
 		- maybe the lightning can be used to turn on an elevator?
 
+Norse Temple
+-Fix Hammer Controls
+-Implement three puzzle rooms and door
+	-jumping puzzle
+	-hammer puzzle
+-Implement more challenging puzzle on the lower floor.  
+-Put reward item at the end. 
+-Add appropriate Skybox
+
 Playability
 - Better overlay (HUD, powerups, minimap?, etc)
 - add pointer for where player is looking (for aiming stuffs)
 - Something doesn't feel right about the movement controls, but I can't put my finger on it...
+-We need to do something about his jumping/rigidbody in general on the character.  Maybe a CharacterController?  Rigidbody sucks.
 
 General
-- Ice sliding puzzle
+- Ice sliding puzzle - I have an idea for this is the Norse Temple
 - Steps/platforming puzzles
-- Running?
 - Fix jumping (gravity)
 - Voiceovers (cheesy one-liners)

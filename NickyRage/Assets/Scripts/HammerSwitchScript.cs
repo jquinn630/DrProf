@@ -5,11 +5,13 @@ public class HammerSwitchScript : MonoBehaviour {
 
 	public GameObject targetObj;
 	public GameObject weapon;
-	bool isActive;
+	Color currentColor;
+	public bool isActive;
 
 	// Use this for initialization
 	void Start () {
 		isActive = false;
+		currentColor = gameObject.renderer.material.color;
 	}
 	
 	// Update is called once per frame
@@ -33,5 +35,12 @@ public class HammerSwitchScript : MonoBehaviour {
 			
 			gameObject.renderer.material.color = Color.red;
 		}
+	}
+	
+	public void ResetPosition()
+	{
+		isActive=false;
+		gameObject.renderer.material.color = currentColor;
+		gameObject.transform.localPosition = new Vector3(0, 0, 0);
 	}
 }
