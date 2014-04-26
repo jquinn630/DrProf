@@ -17,7 +17,6 @@ public class MovePlayer : MonoBehaviour {
 	public float runMultiplier;
 
 	// powerup
-	public bool hasLightning = false;
 	public bool hasHammer = false;
 	public bool hammerTime;
 	int hammerTimer;
@@ -29,8 +28,6 @@ public class MovePlayer : MonoBehaviour {
 		rotDeg = 120f;
 		NumKeys = 0;
 		hammerTime = false;
-
-		animControl.animation["RunningForward"].wrapMode = WrapMode.Loop;
 	}
 	
 	void Update()
@@ -106,7 +103,7 @@ public class MovePlayer : MonoBehaviour {
 				nicky.rigidbody.AddForce(new Vector3(0.0f, 15.0f, 0.0f), ForceMode.Impulse);
 			}
 		} // times the jump with the animation
-		if (hammer && !hammerTime) {
+		if (hammer && hasHammer && !hammerTime) {
 			foreach (AnimationState clip in hammerObject.animation)
 			{
 				hammerObject.animation.Play(clip.name);
@@ -114,10 +111,7 @@ public class MovePlayer : MonoBehaviour {
 			hammerTime = true;
 			hammerTimer=0;
 		}
-		
-		if (leftmouse && hasLightning) {
-						Debug.Log ("PEW PEW LIGHTNINGS");
-		}
+
 //		Debug.Log(animControl.GetCurrentAnimatorStateInfo(0));
 //		Debug.Log (nicky.rigidbody.velocity);
 	}

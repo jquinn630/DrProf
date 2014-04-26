@@ -18,7 +18,7 @@ public class PickUpLightning : MonoBehaviour {
 		if (other.gameObject.name == "NickyRage")
 		{
 			gameObject.SetActive(false);
-			other.gameObject.GetComponent<MovePlayer>().hasLightning = true;	
+			GameObject.Find("NickyRage").gameObject.GetComponent<ShootLightning>().hasLightning = true;	
 		}
 	}
 }

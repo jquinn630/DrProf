@@ -21,12 +21,12 @@ public class FollowScript : MonoBehaviour {
 	}
 	
 	void LateUpdate () {
-		if(Input.GetAxis("Mouse X")<0 ){
-			cam.RotateAround(cam.position, Vector3.up, -90*Time.deltaTime);
-		}
-		if(Input.GetAxis("Mouse X")>0 ){
-			cam.RotateAround(cam.position, Vector3.up, 90*Time.deltaTime);
-		}
+//		if(Input.GetAxis("Mouse X")<0 ){
+//			cam.RotateAround(cam.position, Vector3.up, -90*Time.deltaTime);
+//		}
+//		if(Input.GetAxis("Mouse X")>0 ){
+//			cam.RotateAround(cam.position, Vector3.up, 90*Time.deltaTime);
+//		}
 	}
 	
 }

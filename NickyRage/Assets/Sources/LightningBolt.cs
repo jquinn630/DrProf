@@ -13,6 +13,7 @@ public class LightningBolt : MonoBehaviour
 	public float scale = 1f;
 	public Light startLight;
 	public Light endLight;
+	public bool isShooting = false;
 	
 	Perlin noise;
 	float oneOverZigs;
@@ -26,10 +27,14 @@ public class LightningBolt : MonoBehaviour
 
 		particleEmitter.Emit(zigs);
 		particles = particleEmitter.particles;
+		particleEmitter.enabled = false;
 	}
 	
 	void Update ()
 	{
+		if(isShooting) particleEmitter.enabled = true;
+		else particleEmitter.enabled = false;
+
 		if (noise == null)
 			noise = new Perlin();
 			
