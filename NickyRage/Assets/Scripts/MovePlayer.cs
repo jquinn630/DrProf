@@ -23,11 +23,12 @@ public class MovePlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		moveMagConst= 12f;
+		moveMagConst= 16f;
 		moveDirection = new Vector3 (0f, 0f, 1f);
 		rotDeg = 120f;
 		NumKeys = 0;
 		hammerTime = false;
+		Physics.gravity = new Vector3(0.0f, -20.0f, 0.0f);
 	}
 	
 	void Update()
@@ -74,7 +75,7 @@ public class MovePlayer : MonoBehaviour {
 		{
 			transform.position -= new Vector3(moveDirection.x * moveMagnitude, 0f, moveDirection.z * moveMagnitude);
 		}
-		else if (down) {
+		else if (down  && currentBaseState.nameHash != jumpState) {
 			transform.position += new Vector3(moveDirection.x * moveMagnitude, 0f, moveDirection.z * moveMagnitude);
 			animControl.Play("WalkingBackward");
 		}
@@ -100,7 +101,7 @@ public class MovePlayer : MonoBehaviour {
 		if(currentBaseState.nameHash == jumpState) {
 			jumptimer++;
 			if(jumptimer == 16) {
-				nicky.rigidbody.AddForce(new Vector3(0.0f, 15.0f, 0.0f), ForceMode.Impulse);
+				nicky.rigidbody.AddForce(new Vector3(0.0f, 16.2f, 0.0f), ForceMode.Impulse);
 			}
 		} // times the jump with the animation
 		if (hammer && hasHammer && !hammerTime) {

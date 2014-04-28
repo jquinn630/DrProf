@@ -178,7 +178,7 @@ ModelImporter:
       name: Idle_JumpUpMedium_NoHands1Step_Idle
       takeName: _207_Idle_JumpUpMedium_NoHands1Step_Idle
       firstFrame: 105
-      lastFrame: 210
+      lastFrame: 165
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
