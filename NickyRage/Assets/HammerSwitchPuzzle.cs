@@ -8,7 +8,7 @@ public class HammerSwitchPuzzle : MonoBehaviour {
 	public GameObject switch3;
 	public GameObject switch4;
 	public GameObject switch5;
-	int GameState;
+	public int GameState;
 
 	// Use this for initialization
 	void Start () {
@@ -30,7 +30,13 @@ public class HammerSwitchPuzzle : MonoBehaviour {
 		if (GameState == 0)
 		{
 			if (one&&!two&&!three&&!four&&!five) GameState = 1;
-			else GameState = 0;
+			else {
+				GameState = 0;
+				if (one||two||three||four||five)
+				{
+					ResetAll(one,two,three,four,five);
+				}
+			}
 			//ResetAll(one,two,three,four,five);
 		}
 		else if (GameState == 1)
