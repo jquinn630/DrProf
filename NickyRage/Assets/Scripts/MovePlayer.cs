@@ -21,6 +21,9 @@ public class MovePlayer : MonoBehaviour {
 	public bool hammerTime;
 	int hammerTimer;
 
+	int runcooldown = 200;
+	int runlimit = 80;
+
 	// Use this for initialization
 	void Start () {
 		moveMagConst= 16f;
@@ -61,10 +64,19 @@ public class MovePlayer : MonoBehaviour {
 		AnimatorStateInfo currentBaseState = animControl.GetCurrentAnimatorStateInfo(0);
 		float moveMagnitude = moveMagConst * Time.deltaTime;
 
+		if(runlimit == 0) {
+			runcooldown--;
+			if(runcooldown == 0) {
+				runlimit = 80;
+			}
+		}
+
 		if (up && currentBaseState.nameHash != jumpState) {
-			if(shift) {
+			if(shift && runlimit > 0) {
 				transform.position -= new Vector3(moveDirection.x * moveMagnitude * runMultiplier, 0f, moveDirection.z * moveMagnitude * runMultiplier);
 				animControl.Play("RunningForward");
+				runlimit--;
+				runcooldown = 200;
 			}
 			else {
 				transform.position -= new Vector3(moveDirection.x * moveMagnitude, 0f, moveDirection.z * moveMagnitude);

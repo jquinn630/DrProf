@@ -17,7 +17,19 @@ public class ShootLightning : MonoBehaviour {
 	void Update () {
 		if (Input.GetMouseButton (0) && hasLightning) {
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			GameObject.Find("Target").transform.position = ray.origin + 50*ray.direction;
+			RaycastHit myhit;
+
+			if (Physics.Raycast(ray, out myhit, 50.0f)) {
+				GameObject.Find("Target").transform.position = ray.origin + myhit.distance*ray.direction;
+
+
+				if(myhit.collider == GameObject.Find("LightningTarget").collider) {
+					GameObject.Find("Door6").animation.Play("Door6Up");
+					GameObject.Find("LightningTarget").renderer.material.color = Color.cyan;
+				}
+
+			}
+			else GameObject.Find("Target").transform.position = ray.origin + 50*ray.direction;
 			GameObject.Find("hand.R").GetComponent<LightningBolt>().particleEmitter.enabled = true;
 			GameObject.Find("hand.R").GetComponent<LightningBolt>().particleEmitter.Emit (GameObject.Find("hand.R").GetComponent<LightningBolt>().zigs);
 			GameObject.Find("hand.R").GetComponent<LightningBolt>().particles = GameObject.Find("hand.R").GetComponent<LightningBolt>().particleEmitter.particles;
@@ -29,7 +41,6 @@ public class ShootLightning : MonoBehaviour {
 //			GameObject.Find("hand.R").GetComponent<LightningBolt>().particles =
 //			            GameObject.Find("hand.R").GetComponent<LightningBolt>().particleEmitter.particles;
 //			counter = 50;
-			Debug.Log ("START");
 		}
 		else {
 //			counter--;
@@ -41,7 +52,6 @@ public class ShootLightning : MonoBehaviour {
 //				}
 
 				GameObject.Find("hand.R").GetComponent<LightningBolt>().particles = new Particle[0];
-				Debug.Log("DONE");
 //			}
 		}
 	}

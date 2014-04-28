@@ -34,7 +34,7 @@ public class CamRotate : MonoBehaviour {
 				angle *= -1;
 			}
 			
-				transform.RotateAround (parent.transform.position, Vector3.up, angle * Time.deltaTime);
+				transform.RotateAround (target.transform.position, Vector3.up, angle * Time.deltaTime);
 
 					
 		//transform.LookAt (parent.transform);

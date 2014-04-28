@@ -23,6 +23,10 @@ public class Room3PuzzleWin : MonoBehaviour {
 			if (one==1 && two==1 && three ==1 && four ==1)
 			{
 				theKey.SetActive(true);
+				GameObject.Find("Room1BlockPuzzle/Tile6").renderer.material.color=Color.green;
+				GameObject.Find("Room1BlockPuzzle/Tile7").renderer.material.color=Color.green;
+				GameObject.Find("Room1BlockPuzzle/Tile8").renderer.material.color=Color.green;
+				GameObject.Find("Room1BlockPuzzle/Tile9").renderer.material.color=Color.green;
 				isSolved = 1;
 			}
 		}

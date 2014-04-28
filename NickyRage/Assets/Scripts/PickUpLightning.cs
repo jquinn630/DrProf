@@ -19,6 +19,7 @@ public class PickUpLightning : MonoBehaviour {
 		{
 			gameObject.SetActive(false);
 			GameObject.Find("NickyRage").gameObject.GetComponent<ShootLightning>().hasLightning = true;	
+			GameObject.Find ("Door6").animation.Play("Door6Down");
 		}
 	}
 }
