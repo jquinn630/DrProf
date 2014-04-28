@@ -18,8 +18,8 @@ public class LightningBolt : MonoBehaviour
 	Perlin noise;
 	float oneOverZigs;
 	
-	private Particle[] particles;
-	
+	public Particle[] particles;
+
 	void Start()
 	{
 		oneOverZigs = 1f / (float)zigs;
@@ -32,9 +32,6 @@ public class LightningBolt : MonoBehaviour
 	
 	void Update ()
 	{
-		if(isShooting) particleEmitter.enabled = true;
-		else particleEmitter.enabled = false;
-
 		if (noise == null)
 			noise = new Perlin();
 			
