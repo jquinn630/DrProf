@@ -98,6 +98,9 @@ public class MovePlayer : MonoBehaviour {
 			transform.position += new Vector3(moveDirection.x * moveMagnitude, 0f, moveDirection.z * moveMagnitude);
 			animControl.Play("WalkingBackward");
 		}
+		else if(GetComponent<ShootLightning>().shooting) {
+			animControl.Play ("Lightening"); // really John... you spelled it wrong...
+		}
 		else if (currentBaseState.nameHash != jumpState && !hammerStart){
 			animControl.Play("Idle");
 		}

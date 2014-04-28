@@ -1,28 +1,10 @@
-<Properties>
+﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Room3PuzzleWin.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ShootLightning.cs">
     <Files>
-      <File FileName="Assets/LightningSwitchTrigger.cs" Line="13" Column="23" />
-      <File FileName="Assets/Scripts/ShootLightning.cs" Line="34" Column="72" />
-      <File FileName="Assets/Scripts/MovePlayer.cs" Line="70" Column="18" />
-      <File FileName="Assets/Scripts/Room1PuzzleWin.cs" Line="29" Column="1" />
-      <File FileName="Assets/Scripts/Room3PuzzleWin.cs" Line="30" Column="5" />
-      <File FileName="Assets/Scripts/Room4PuzzleScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/ElevatorScript.cs" Line="22" Column="54" />
+      <File FileName="Assets/Scripts/ShootLightning.cs" Line="32" Column="1" />
     </Files>
-<<<<<<< HEAD
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Assembly-CSharp" expanded="True">
-            <Node name="Scripts" expanded="True">
-              <Node name="Room3PuzzleWin.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-=======
->>>>>>> 00cdbf91ba8caebd8e1316044b3c3a15c449ca80
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
