@@ -10,7 +10,7 @@ public class HammerScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		isActive=true;
 	}
 	
 	// Update is called once per frame
