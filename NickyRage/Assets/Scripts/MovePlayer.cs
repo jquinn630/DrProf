@@ -19,6 +19,7 @@ public class MovePlayer : MonoBehaviour {
 	// powerup
 	public bool hasHammer = false;
 	public bool hammerTime;
+	public bool hammerStart;
 	int hammerTimer;
 
 	int runcooldown = 200;
@@ -31,20 +32,26 @@ public class MovePlayer : MonoBehaviour {
 		rotDeg = 120f;
 		NumKeys = 0;
 		hammerTime = false;
+		hammerStart= false;
 		Physics.gravity = new Vector3(0.0f, -20.0f, 0.0f);
 	}
 	
 	void Update()
 	{
 		keyText.text = "Keys: " + NumKeys;
-		if(hammerTime)
+		if(hammerStart)
 		{
 			hammerTimer++;	
 		}
-		if (hammerTimer>60)
+		if(hammerTimer>=35)
+		{
+			hammerTime=true;
+		}
+		if (hammerTimer>105)
 		{
 			hammerTimer=0;
 			hammerTime=false;
+			hammerStart=false;
 		}
 	}
 	
@@ -64,6 +71,7 @@ public class MovePlayer : MonoBehaviour {
 		AnimatorStateInfo currentBaseState = animControl.GetCurrentAnimatorStateInfo(0);
 		float moveMagnitude = moveMagConst * Time.deltaTime;
 
+<<<<<<< HEAD
 		if(runlimit == 0) {
 			runcooldown--;
 			if(runcooldown == 0) {
@@ -73,6 +81,10 @@ public class MovePlayer : MonoBehaviour {
 
 		if (up && currentBaseState.nameHash != jumpState) {
 			if(shift && runlimit > 0) {
+=======
+		if (up && currentBaseState.nameHash != jumpState  && !hammerStart) {
+			if(shift) {
+>>>>>>> 00cdbf91ba8caebd8e1316044b3c3a15c449ca80
 				transform.position -= new Vector3(moveDirection.x * moveMagnitude * runMultiplier, 0f, moveDirection.z * moveMagnitude * runMultiplier);
 				animControl.Play("RunningForward");
 				runlimit--;
@@ -83,45 +95,46 @@ public class MovePlayer : MonoBehaviour {
 				animControl.Play("WalkingForward");
 			}
 		}
-		else if (up && currentBaseState.nameHash == jumpState)
+		else if (up && currentBaseState.nameHash == jumpState && !hammerStart)
 		{
 			transform.position -= new Vector3(moveDirection.x * moveMagnitude, 0f, moveDirection.z * moveMagnitude);
 		}
-		else if (down  && currentBaseState.nameHash != jumpState) {
+		else if (down  && currentBaseState.nameHash != jumpState && !hammerStart) {
 			transform.position += new Vector3(moveDirection.x * moveMagnitude, 0f, moveDirection.z * moveMagnitude);
 			animControl.Play("WalkingBackward");
 		}
-		else if (currentBaseState.nameHash != jumpState){
+		else if (currentBaseState.nameHash != jumpState && !hammerStart){
 			animControl.Play("Idle");
 		}
 
-		if (space && currentBaseState.nameHash != jumpState){
+		if (space && currentBaseState.nameHash != jumpState && !hammerStart){
 			animControl.Play("Jump");
 			jumptimer = 0;
 		}
 		
-		if (left  && currentBaseState.nameHash != jumpState) {
+		if (left  && currentBaseState.nameHash != jumpState && !hammerStart) {
 			moveDirection = Quaternion.Euler(0, -rotDeg * Time.deltaTime, 0) * moveDirection; 
 			transform.RotateAround(transform.position, Vector3.up, -rotDeg*Time.deltaTime);
 			moveDirection.Normalize();
 		}
-		if (right  && currentBaseState.nameHash != jumpState) {
+		if (right  && currentBaseState.nameHash != jumpState && !hammerStart) {
 			moveDirection = Quaternion.Euler (0, rotDeg * Time.deltaTime, 0) * moveDirection; 
 			transform.RotateAround (transform.position, Vector3.up, rotDeg * Time.deltaTime);
 			moveDirection.Normalize();
 		}
-		if(currentBaseState.nameHash == jumpState) {
+		if(currentBaseState.nameHash == jumpState && !hammerStart) {
 			jumptimer++;
 			if(jumptimer == 16) {
 				nicky.rigidbody.AddForce(new Vector3(0.0f, 16.2f, 0.0f), ForceMode.Impulse);
 			}
 		} // times the jump with the animation
-		if (hammer && hasHammer && !hammerTime) {
-			foreach (AnimationState clip in hammerObject.animation)
-			{
-				hammerObject.animation.Play(clip.name);
-			}
-			hammerTime = true;
+		if (hammer && hasHammer && !hammerStart) {
+			//foreach (AnimationState clip in hammerObject.animation)
+			//{
+			//	hammerObject.animation.Play(clip.name);
+			//}
+			animControl.Play("SwingHammer");
+			hammerStart=true;
 			hammerTimer=0;
 		}
 
